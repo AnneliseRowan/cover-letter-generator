@@ -1,7 +1,7 @@
 const inquirer = require("inquirer"); 
 const fs = require("fs"); 
 const questions = require("./questions.js"); 
-let date; 
+
 
 
 const generateCoverLetter = (answers) => 
@@ -11,21 +11,30 @@ ${answers.phone}
 
 ${answers.email}
 
-${date}
+${answers.date}
 
 Dear Hiring Manager,
 
-I'm excited to be applying for the ${answers.position} position at ${answers.company}. With software development, there is always something new to discover. Designing a program that is truly helpful to the user is my ultimate goal on every project, and I am delighted by the opportunity to apply my knowledge at ${answers.company}, ${answers.known}.
+    I'm excited to be applying for the ${answers.position} position at ${answers.company}. With software development, there is always something new to discover. 
+Designing a program that is truly helpful to the user is my ultimate goal on every project, and I am delighted by the opportunity to apply my knowledge at ${answers.company}, ${answers.known}.
 
-During my , I provided support for a role-oriented parts management system that allowed the users to track parts, jobs, tasks, statistics and other job and employee data. This system is utilized by an Air Force depot to track all progress on the parts and labor required to repair and supply airplanes. As part of my duties, I provided enhancements to the program and also provided immediate solutions to unexpected problems.
+    I enjoy being challenged and engaging with projects that require me to work outside my comfort and knowledge set, as continuing to learn new languages and development techniques are 
+important to me and the success of your organization. 
 
-When I was appointed to design an online version of the hardcopy workbook used by the maintenance and repair technicians for job tracking, I successfully led the team in certain tasks and followed direction from the team leader for other requirements. The implementation of the online workbook resulted in a 25% faster completion time for measurable tasks the following year.
+    Your listed requirements closely match my background and skills. A few I would like to highlight that would enable me to contribute to your bottom lines are: 
 
-Thank you for your time and consideration. I'm looking forward to learning more about the Software Developer position and about Cloud Clearwater. As a Software Developer, my goal is to continually increase my programming skills in order to present better solutions to my employers and their clients. If I am offered this position, I will be ready to hit the ground running and help ${answers.company} exceed its own expectations for success.
+    * ${skill1}
+    * ${skill2}
+    * ${skill3}
+
+
+    Thank you for your time and consideration. I'm looking forward to learning more about the ${answers.position} position and about ${answers.company}.  I've attached a copy of my resume
+that details my projects and experience. I can be reached anytime via my cellphone, ${answers.phone} or via email at ${answers.email}. If I am offered this position, I will be ready to 
+hit the ground running and help ${answers.company} exceed its own expectations for success.
 
 Sincerely,
 
-Sofia Flores`; 
+${answers.fullName}`; 
 
 inquirer
     .prompt(questions)
